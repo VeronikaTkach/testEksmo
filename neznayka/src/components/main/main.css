@@ -1,0 +1,15 @@
+.main_img{
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
+
+.main_input{
+    width: 251px;
+    height: 49px;
+    border-radius: 74px;
+    border-color: #F2F9FF;
+    box-shadow: 25px 28px 66px #B0C3D2BA;
+    border-style: solid;
+    font-size: 14px;
+    background: linear-gradient(to right, #E5EFFA, #FFFFFF);
+}
