@@ -33,7 +33,15 @@
     font-size: 20px;
 }
 
-.button_img{
+#button{
     border-style: hidden;
-    background-color: rgba(28,28,28,0)
+    background-color: rgba(28,28,28,0);
+}
+
+.button_visible{
+    display: block;
+}
+
+.button_invisible{
+    display: none;
 }
