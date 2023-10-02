@@ -6,11 +6,11 @@
 }
 
 .main_img{
-    margin-top: 50%;
-    margin-bottom: 50%;
+    margin-top: 30%;
+    margin-bottom: 15%;
 }
 
-.text_input{
+#text_input{
     width: 251px;
     height: 49px;
     border-radius: 74px;
@@ -19,6 +19,7 @@
     border-style: solid;
     font-size: 14px;
     background: linear-gradient(to right, #E5EFFA, #FFFFFF);
+    margin-bottom: 10%;
 }
 
 .main_input{
@@ -38,10 +39,23 @@
     background-color: rgba(28,28,28,0);
 }
 
+.btn_send{
+
+}
+
 .button_visible{
     display: block;
 }
 
 .button_invisible{
     display: none;
+}
+
+#soundWave{
+    width: 330px;
+    padding-bottom: 18.22px;
+}
+
+.btn_ok{
+    padding-top: 88px;
 }
