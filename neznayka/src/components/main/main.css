@@ -39,8 +39,11 @@
     background-color: rgba(28,28,28,0);
 }
 
-.btn_send{
-
+#button_send{
+    border-radius: 8px;
+    border-color: #F2F9FF;
+    box-shadow: 25px 28px 66px #B0C3D2BA;
+    background: linear-gradient(to right, #E5EFFA, #FFFFFF);
 }
 
 .button_visible{
@@ -58,4 +61,18 @@
 
 .btn_ok{
     padding-top: 88px;
+}
+
+@media (max-width: 425px){
+    .main_input{
+        width: 280px;
+        height: 60px;
+        margin-top: 50px;
+        font-size: 18px;
+    }
+
+    #soundWave{
+        width: 288px;
+        padding-bottom: 18.22px;
+    }
 }
