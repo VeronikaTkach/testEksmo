@@ -6,7 +6,15 @@ import microphoneOff from "../../img/microphoneOff.png";
 import microphoneOn from "../../img/microphoneOn.png";
 import buttonOk from "../../img/buttonOk.png";
 
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
 export const Main = () => {
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.lang = 'ru-RU';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
 
     const [btn_mic_on_enabled, setBtn_mic_on_enabled] = useState(true);
     const [btn_mic_off_enabled, setBtn_mic_off_enabled] = useState(false);
@@ -14,6 +22,25 @@ export const Main = () => {
     const [show_text_input, setShow_text_input] = useState(true);
     const [show_soundWave, setShow_soundWave] = useState(false);
     const [btn_send, setBtn_send] = useState(false);
+    const [AI_text, setAI_text] = useState('');
+
+    function setInitialState(){
+
+    }
+
+    function setRecordingState(){
+
+    }
+
+    function setTextInputState(){
+
+    }
+
+    function setResultsState(){
+
+    }
+
+
 
 
     const mic_off_pressed_handler = () => {
@@ -32,6 +59,8 @@ export const Main = () => {
         setShow_soundWave(false);
         setShow_text_input(false);
         setBtn_send(false);
+
+        // recognition.start();
     }
 
     const text_input_handler = () => {
@@ -61,11 +90,19 @@ export const Main = () => {
         setBtn_send(false);
     }
 
+    recognition.onresult = function (r) {
+        const recognizedText = r.results[0][0].transcript;
+
+        mic_off_pressed_handler();
+
+        setAI_text(recognizedText);
+    }
+
     return (
         <Fragment>
             <div className={'main'}>
                 {/*поле "говорите"*/}
-                <input disabled className={'main_input'} placeholder={'говорите'}/>
+                <input disabled className={'main_input'} placeholder={AI_text ? AI_text : 'говорите'} />
                 {/*изображение Незнайки*/}
                 <img src={img1} alt="image" className="main_img" />
                 {/*поле ввода текстом*/}
